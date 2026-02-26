@@ -72,3 +72,12 @@ li span {
   color: #777;
   margin-top: 20px;
 }
+.btn-group {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-group button {
+  padding: 5px 8px;
+  font-size: 12px;
+}
