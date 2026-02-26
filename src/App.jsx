@@ -45,15 +45,19 @@ function App() {
       </div>
 
       <ul>
-        {tasks.map((task, index) => (
-          <li key={index} className={task.completed ? "completed" : ""}>
-            <span onClick={() => toggleComplete(index)}>
-              {task.text}
-            </span>
-            <button onClick={() => deleteTask(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+  {tasks.length === 0 ? (
+    <p className="empty">No tasks yet. Add one above 👆</p>
+  ) : (
+    tasks.map((task, index) => (
+      <li key={index} className={task.completed ? "completed" : ""}>
+        <span onClick={() => toggleComplete(index)}>
+          {task.text}
+        </span>
+        <button onClick={() => deleteTask(index)}>Delete</button>
+      </li>
+    ))
+  )}
+</ul>
     </div>
   )
 }
